@@ -1,0 +1,124 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('wooden-table.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-attachment: fixed;
+}
+
+#game-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  color: white; /* Changed the color to white */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  margin: 0;
+  text-align: center;
+  padding-top: 10px;
+}
+
+#turn-indicator {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(7, 80px);
+  grid-template-rows: repeat(6, 80px);
+  gap: 5px;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #000;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+}
+
+.cell.red {
+  background-color: red;
+  box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.cell.yellow {
+  background-color: yellow;
+  box-shadow: inset 0 0 10px rgba(255, 255, 0, 0.6);
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#winner-message {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#winner-message.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#turn-indicator {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 600px) {
+  #game-board {
+    grid-template-columns: repeat(7, 60px);
+    grid-template-rows: repeat(6, 60px);
+  }
+  .cell {
+    width: 60px;
+    height: 60px;
+  }
+}
